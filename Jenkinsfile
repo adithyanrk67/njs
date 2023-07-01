@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh "docker-compose up -d"
                 sh "docker-compose exec -ti web npm install"  // Install the Node.js app dependencies
-                sh "docker-compose exec -ti web node server.js &"  // Start the Node.js server in the background
+                sh "docker-compose exec -ti web node app.js &"  // Start the Node.js server in the background
                 sh "docker-compose exec -ti web npm test"  // Run the tests
             }
         }
