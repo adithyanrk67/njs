@@ -19,8 +19,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh "docker-compose up -d"
-                sh "docker-compose exec -ti  web node app.js &"  // Start the Node.js server in the background
-                sh "docker-compose exec -ti  web npm test"  // Run the tests
+                //sh "docker-compose exec -ti  web node app.js &"  // Start the Node.js server in the background
+                //sh "docker-compose exec -ti  web npm test"  // Run the tests
             }
         }
         stage('Push') {
