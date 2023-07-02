@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: njs-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: njs-app
+  template:
+    metadata:
+      labels:
+        app: njs-app
+    spec:
+      containers:
+        - name: njs-container
+          image: vadakkan01/njs:0.1
+          ports:
+            - containerPort: 3000
+
